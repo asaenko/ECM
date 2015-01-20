@@ -1,5 +1,7 @@
 package ua.sap.ecm;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +14,13 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Create the account type and default account
+        Account newAccount = new Account("ua.ecm","ua.ecm");
+        AccountManager accountManager = (AccountManager) this.getSystemService(ACCOUNT_SERVICE);
+// If the account already exists no harm is done but
+// a warning will be logged.
+        accountManager.addAccountExplicitly(newAccount, null, null);
     }
 
 
