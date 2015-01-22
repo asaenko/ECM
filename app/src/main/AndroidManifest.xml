@@ -24,7 +24,7 @@
         </activity>
 
         <provider
-            android:name=".provider.ecmContentProvider"
+            android:name=".provider.EcmContentProvider"
             android:authorities="ua.sap.ecm.provider"
             android:enabled="true"
             android:exported="true" >
